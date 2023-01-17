@@ -88,7 +88,7 @@ print(f'Greatest Decrease in Profits: {max_decrease_date} (${max_decrease})')
 lines = ['Financial Analysis' , '', '------------------------' ,'' , f'Total Months: {total_months}' , '' ,  f'Total: ${net_total}' , '' , f'Average Change: ${average_change}' ,
         '' , f'Greatest Increase in Profits: {max_increase_date} ({max_increase})' , '' , f'Greatest Decrease in Profits: {max_decrease_date} ({max_decrease})' ]  
 
-# Write the fstrings to a text file using the 'lines' list
+# Write the f strings to a text file using the 'lines' list
 with open('Financial_Analysis.txt', 'w') as f:
     for line in lines:
         f.write(line)
