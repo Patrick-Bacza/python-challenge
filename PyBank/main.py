@@ -89,7 +89,7 @@ print(f'Greatest Decrease in Profits: {max_decrease_date} (${max_decrease})')
 #  Add fstrings to list called lines
 
 lines = ['Financial Analysis' , '', '------------------------' ,'' , f'Total Months: {total_months}' , '' ,  f'Total: ${net_total}' , '' , f'Average Change: ${average_change}' ,
-        '' , f'Greatest Increase in Profits: {max_increase_date} ({max_increase})' , '' , f'Greatest Decrease in Profits: {max_decrease_date} ({max_decrease})' ]  
+        '' , f'Greatest Increase in Profits: {max_increase_date} (${max_increase})' , '' , f'Greatest Decrease in Profits: {max_decrease_date} (${max_decrease})' ]  
 
 # Write the f strings to a text file using the 'lines' list
 
