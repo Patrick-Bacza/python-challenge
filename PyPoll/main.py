@@ -1,4 +1,5 @@
 # import os and csv in order to read in csv file
+
 import os
 import csv
 
@@ -20,6 +21,7 @@ with open(csvpath) as csvfile:
 
 # Create 'votes' list to house 'candidate' column. This is how we wil count the votes
 # Create a variable for each candidate and set it equal to zero. This is how will store the count for each candidate
+
     votes = []
     stockham = 0
     degette = 0

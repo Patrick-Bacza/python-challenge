@@ -4,6 +4,7 @@ import os
 import csv 
 
 # Create lists to house columns from csv 
+
 date = []
 profit_loss = []
 
@@ -32,7 +33,8 @@ with open(csvpath) as csvfile:
         net_total = sum(profit_loss)
 
 # Create Average period change / Greatest Increase / Greatest Decrease
-#   1. Copy the date list and remove the first date from the date list as this does not have a prior period to compare it too   
+#   1. Copy the date list and remove the first date from the date list as this does not have a prior period to compare it to   
+
     date_2 = date.copy()
     date_2.remove(date[0])
 
@@ -48,6 +50,7 @@ with open(csvpath) as csvfile:
     period_2.remove(period_2[85])
 
 #   4. Create empty list to house the period changes
+
     period_changes = []
 
 #   5. zip the two lists (period_1 and period_2) together and run a for loop on their values
@@ -89,6 +92,7 @@ lines = ['Financial Analysis' , '', '------------------------' ,'' , f'Total Mon
         '' , f'Greatest Increase in Profits: {max_increase_date} ({max_increase})' , '' , f'Greatest Decrease in Profits: {max_decrease_date} ({max_decrease})' ]  
 
 # Write the f strings to a text file using the 'lines' list
+
 with open('Financial_Analysis.txt', 'w') as f:
     for line in lines:
         f.write(line)
