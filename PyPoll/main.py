@@ -25,7 +25,7 @@ with open(csvpath) as csvfile:
     degette = 0
     doane = 0
 
-# Append 'votes' list with the 'candidate' from the csv 
+# Append 'votes' list with the 'candidate' column from the csv 
 # To get the total votes, take the length of the votes list. 
 # Store it in a variable called total_votes
 
@@ -33,8 +33,9 @@ with open(csvpath) as csvfile:
     for row in csvreader:
         votes.append(row[2])
         total_votes = len(votes)
+
 # Get vote count for each candidate
-#       Use if statement. loop through the candidates column. Update each variable by one depending on whose name appears in th row
+#       Use if statement. loop through the candidates column. Update each variable by one depending on whose name appears in the row
         
         if row[2] == 'Charles Casper Stockham':
             stockham = stockham + 1
@@ -44,8 +45,8 @@ with open(csvpath) as csvfile:
             doane = doane + 1
 
 # Calculate percentages 
-#       Create three variables to hous each candidates percentage of the vote 
-#       Set equal to their votes deivded by the total amount of votes and multiply by 100
+#       Create three variables to house each candidates percentage of the vote 
+#       Set variables equal to their votes divided by the total amount of votes and multiply by 100
 #       Round decimal to three places
 
         s_percentage = round((stockham / total_votes) * 100 , 3)
@@ -56,7 +57,7 @@ with open(csvpath) as csvfile:
 
         winner = ''
 
-# use if statemnt to set the winner variable to the candidate with the most votes
+# use if statement to set the winner variable to the candidate with the most votes
 
         if degette > stockham & doane:
             winner = 'Diana Degette'
@@ -65,7 +66,7 @@ with open(csvpath) as csvfile:
         else:
             winner = 'Raymon Anthony Doane'
 
- # Use fstrings to create print statments           
+ # Use f strings to create print statments           
 
 
     print('Election Results')
