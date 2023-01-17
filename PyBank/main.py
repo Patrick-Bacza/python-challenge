@@ -52,7 +52,7 @@ with open(csvpath) as csvfile:
 
 #   5. zip the two lists (period_1 and period_2) together and run a for loop on their values
 #            1. append period_changes list with the difference of each item in order to get the period_changes
-#            2. sum the period_changes list and divide by its length to get the average change. Store it in Average_change variable
+#            2. sum the period_changes list and divide it by its length to get the average change. Store it in Average_change variable
 #            3. use max() and min() to get the max increase and max decrease. Store them in the max_increase and max_decrease variables respectively
 #            4. The index for the values found in period_changes will match up with the values in the date list
 #                   Use index() to find the index for the max_increase and max_decrease values
@@ -67,7 +67,7 @@ with open(csvpath) as csvfile:
         max_increase_date = date_2[period_changes.index(max_increase)]
         max_decrease_date = date_2[period_changes.index(max_decrease)]
 
-# Create print statements useinf f strings and the variables created above
+# Create print statements useing f strings and the variables created above
 
 print('Financial Analysis')
 
@@ -88,7 +88,7 @@ print(f'Greatest Decrease in Profits: {max_decrease_date} (${max_decrease})')
 lines = ['Financial Analysis' , '', '------------------------' ,'' , f'Total Months: {total_months}' , '' ,  f'Total: ${net_total}' , '' , f'Average Change: ${average_change}' ,
         '' , f'Greatest Increase in Profits: {max_increase_date} ({max_increase})' , '' , f'Greatest Decrease in Profits: {max_decrease_date} ({max_decrease})' ]  
 
-# Write the fstrings to a text file
+# Write the fstrings to a text file using the 'lines' list
 with open('Financial_Analysis.txt', 'w') as f:
     for line in lines:
         f.write(line)
