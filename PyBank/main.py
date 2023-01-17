@@ -69,7 +69,7 @@ print(f'Greatest Decrease in Profits: {max_decrease_date} (${max_decrease})')
 lines = ['Financial Analysis' , '', '------------------------' ,'' , f'Total Months: {total_months}' , '' ,  f'Total: ${total}' , '' , f'Average Change: ${average_change}' ,
         '' , f'Greatest Increase in Profits: {max_increase_date} ({max_increase})' , '' , f'Greatest Decrease in Profits: {max_decrease_date} ({max_decrease})' ]  
 
-with open('Analysis.txt', 'w') as f:
+with open('Financial_Analysis.txt', 'w') as f:
     for line in lines:
         f.write(line)
         f.write('\n')
