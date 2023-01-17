@@ -34,7 +34,19 @@ with open(csvpath) as csvfile:
         max_decrease = min(profit_loss)
         max_increase_date = month_year[profit_loss.index(max_increase)]
         max_decrease_date = month_year[profit_loss.index(max_decrease)]
+    
+    period_1 = profit_loss.copy()
+    period_1.remove(period_1[0])
 
+    period_2 = profit_loss.copy()
+    period_2.remove(period_2[85])
+
+    period_changes = []
+
+    for item1 , item2 in zip(period_1 , period_2):
+        period_changes.append(item1 - item2)
+
+    print(round(sum(period_changes) / len(period_changes),2))
 
 
    
@@ -47,6 +59,8 @@ print('------------------------')
 print(f'Total Months: {total_months}')
 
 print(f'Total: ${total}')
+
+
 
 print(f'Greatest Increase in Profits: {max_increase_date} ({max_increase})')
 
