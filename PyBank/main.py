@@ -45,11 +45,7 @@ with open(csvpath) as csvfile:
 
     for item1 , item2 in zip(period_1 , period_2):
         period_changes.append(item1 - item2)
-
-    print(round(sum(period_changes) / len(period_changes),2))
-
-
-   
+        average_change = round(sum(period_changes) / len(period_changes),2)
 
 
 print('Financial Analysis')
@@ -60,7 +56,7 @@ print(f'Total Months: {total_months}')
 
 print(f'Total: ${total}')
 
-
+print(f'Average Change: ${average_change}')
 
 print(f'Greatest Increase in Profits: {max_increase_date} ({max_increase})')
 
