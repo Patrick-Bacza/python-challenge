@@ -66,8 +66,14 @@ with open(csvpath) as csvfile:
 
     print('-----------------------')
 
+lines = ['Election Results' , '', '------------------------' ,'' , f'Total Votes: {total_votes}' , '' , '------------------------' , '' , f'Charles Casper Stockham:  {s_percentage}% ({stockham})',
+         '' , f'Diana Degette:  {de_percentage}% ({degette})' , '' , f'Raymon Anthony Doane:  {do_percentage}% ({doane})' , '' , '-----------------------' , '' , f'Winner: {winner}',
+         '' , '-----------------------' ] 
 
-
+with open('Election_Results.txt', 'w') as f:
+    for line in lines:
+        f.write(line)
+        f.write('\n')
 
 
 
