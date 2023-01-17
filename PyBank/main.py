@@ -30,10 +30,9 @@ with open(csvpath) as csvfile:
         profit_loss.append(int(row[1]))
         total_months = len(profit_loss)
         total = sum(profit_loss)
-        max_increase = max(profit_loss)
-        max_decrease = min(profit_loss)
-        max_increase_date = month_year[profit_loss.index(max_increase)]
-        max_decrease_date = month_year[profit_loss.index(max_decrease)]
+
+    month_year.remove(month_year[0])
+
     
     period_1 = profit_loss.copy()
     period_1.remove(period_1[0])
@@ -46,6 +45,10 @@ with open(csvpath) as csvfile:
     for item1 , item2 in zip(period_1 , period_2):
         period_changes.append(item1 - item2)
         average_change = round(sum(period_changes) / len(period_changes),2)
+        max_increase = max(period_changes)
+        max_decrease = min(period_changes)
+        max_increase_date = month_year[period_changes.index(max_increase)]
+        max_decrease_date = month_year[period_changes.index(max_decrease)]
 
 
 print('Financial Analysis')
@@ -58,9 +61,9 @@ print(f'Total: ${total}')
 
 print(f'Average Change: ${average_change}')
 
-print(f'Greatest Increase in Profits: {max_increase_date} ({max_increase})')
+print(f'Greatest Increase in Profits: {max_increase_date} (${max_increase})')
 
-print(f'Greatest Decrease in Profits: {max_decrease_date} ({max_decrease})')
+print(f'Greatest Decrease in Profits: {max_decrease_date} (${max_decrease})')
 
 
 lines = ['Financial Analysis' , '', '------------------------' ,'' , f'Total Months: {total_months}' , '' ,  f'Total: ${total}' , '' , f'Average Change: ${average_change}' ,
